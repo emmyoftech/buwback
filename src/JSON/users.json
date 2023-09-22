@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "username": "Segun",
+        "password": "Job456",
+        "email": "void"
+    },
+    {
+        "id": 2,
+        "username": "Gloria",
+        "password": "Love345",
+        "email": "emmanuelbowofoluwa@gmail.com"
+    },
+    {
+        "id": 3,
+        "username": "samuel",
+        "password": "Lars444",
+        "email": "void"
+    },
+    {
+        "id": 4,
+        "username": "kehinde",
+        "password": "Dog678",
+        "email": "void"
+    },
+    {
+        "id": 5,
+        "username": "David",
+        "password": "Love345",
+        "email": "emmanuelcod90@gmail.com"
+    },
+    {
+        "id": 6,
+        "username": "Joseph",
+        "password": "Doe234",
+        "email": "gamem2236@gmail.com"
+    },
+    {
+        "id": 7,
+        "username": "Emeka",
+        "password": "Favor556",
+        "email": "void"
+    }
+]

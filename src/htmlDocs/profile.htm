@@ -1,0 +1,101 @@
+<!-- ABsolute Elelments -->
+<ul class="menu">
+    <li id="back"> <i class="fa-solid fa-arrow-left"></i></li>
+    <li id="dashboard" data-page="dashboard"> <i class="fa-solid fa-house"></i> dashboard</li>
+    <li id="edit_profile" data-page="edit"> <i class="fa-solid fa-user"></i> edit profile</li>
+    <li id="verify_me" data-page="verify"> <i class="fa-solid fa-certificate"></i> verify me</li>
+    <li id="logout"> <i class="fa-solid fa-right-from-bracket"></i> logout</li>
+</ul>
+<div class="veri_succ">
+    <i class="fa-regular fa-circle-check"></i>
+    <p>Congrats <span></span>, you are now verified.</p>
+</div>
+<!-- -------- -->
+<div class="pro_holder">
+    <ol class="left">'
+        <div class="ln"></div>
+        <span>
+            #build_ur_watch
+        </span>
+        <li id="dashboard" class="active" data-page="dashboard"> <i class="fa-solid fa-house"></i> dashboard</li>
+        <li id="edit_profile" data-page="edit"> <i class="fa-solid fa-user"></i> edit profile</li>
+        <li id="verify_me" data-page="verify"> <i class="fa-solid fa-certificate"></i> verify me</li>
+        <li id="logout"> <i class="fa-solid fa-right-from-bracket"></i> logout</li>
+    </ol>
+    <div class="right">
+        <span class="profile_controllers">
+            <i class="fa-solid fa-bars" id="menu_icon" title="menu"></i>
+            <i class="fa-solid fa-circle-xmark" id="close_icon" title="close"></i>
+            <i class="fa-solid fa-arrow-left hide" id="bck_btn"></i>
+        </span>
+        <div class="main-profile-container">
+            <!-- loader and messager -->
+            <span class="loader_msg hide">
+                <p class="hide"></p>
+                <i class="fa-solid fa-spinner hide"></i>
+            </span>
+            <div class="dashboard page" data-page="dashboard">
+                <p id="user_label"></p>
+                <b id="user_name"></b>
+                <pre id="verification"></pre>
+            </div>
+            <div class="edit_profile hide page" data-page="edit">
+                <h1 id="edit_title"></h1>
+                <ul id="model_changer_holder">
+                    <li id="us_panel"><span><i class="fa-solid fa-user"></i> change username </span><i
+                            class="fa-solid fa-caret-right"></i></li>
+                    <li id="pw_panel"><span><i class="fa-solid fa-key"></i> change password</span> <i
+                            class="fa-solid fa-caret-right"></i></li>
+                </ul>
+                <!-- change password form -->
+                <form class="pw_change hide">
+                    <label>
+                        <span id="bub"><input type="password" placeholder="Enter old password" autofocus
+                                id="ol-con-pass"></span>
+                        <p class="inp_msg"></p>
+                        <button class="spec_btn">submit <i class="fa-solid fa-spinner hide"></i></button>
+                    </label>
+                    <label class="disabled">
+                        <input type="password" placeholder="Enter new password">
+                        <p class="inp_msg"></p>
+                    </label>
+                    <label class="disabled">
+                        <input type="password" placeholder="Confirm password">
+                        <p class="inp_msg"></p>
+                    </label>
+                    <input type="submit" value="submit" class="disabled">
+                </form>
+                <!-- change username form -->
+                <form class="us-name_change hide">
+                    <span>
+                        <i class="fa-solid fa-caret-right"></i>
+                        <p id="old_user_name"></p>
+                    </span>
+                    <label>
+                        <input type="text" placeholder="Enter new username">
+                        <p class="inp_msg"></p>
+                    </label>
+                    <input class="disabled" type="submit" value="submit">
+                </form>
+            </div>
+            <div class="verify hide page" data-page="verify">
+                <p class="ntd_msg">
+                    <span>note:-</span> Enter a valid email address to receive an O.T.P to validate your
+                    profile to enjoy other features in the app.
+                </p>
+                <h1 class="otp_msg hide">enter verification code</h1>
+                <form>
+                    <label>
+                        <input type="email" placeholder="Enter your email...">
+                        <p class="inp_msg"></p>
+                    </label>
+                    <div class="sub_bck">
+                        <button class="norm_btn hide"><i class="fa-solid fa-caret-left"></i> back</button>
+                        <input type="submit" class="disabled" value="submit">
+                    </label>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+</div>

@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "name": "gold case",
+        "path": "904370380_sw.webp",
+        "price": 10000,
+        "category": "case",
+        "pathName": "--"
+    },
+    {
+        "id": 2,
+        "name": "silver case",
+        "path": "904373876_sw.webp",
+        "price": 8000,
+        "category": "case",
+        "pathName": "--"
+    },
+    {
+        "id": 3,
+        "name": "black face",
+        "path": "904381539_sw.webp",
+        "price": 6000,
+        "category": "dial",
+        "pathName": "--"
+    },
+    {
+        "id": 4,
+        "name": "white face",
+        "path": "904383073_sw.webp",
+        "price": 7000,
+        "category": "dial",
+        "pathName": "--"
+    },
+    {
+        "id": 5,
+        "name": "milk face",
+        "path": "wa.webp",
+        "price": 5000,
+        "category": "dial",
+        "pathName": "--"
+    },
+    {
+        "id": 6,
+        "name": "red strap",
+        "path": "TWC072400BK.webp",
+        "price": 5000,
+        "category": "strap",
+        "pathName": "--"
+    },
+    {
+        "id": 7,
+        "name": "purple strap",
+        "path": "TWC071900BK.webp",
+        "price": 9000,
+        "category": "strap",
+        "pathName": "--"
+    },
+    {
+        "id": 8,
+        "name": "brown strap",
+        "path": "TWC072800BK_sw.webp",
+        "price": 9000,
+        "category": "strap",
+        "pathName": "--"
+    }
+]
