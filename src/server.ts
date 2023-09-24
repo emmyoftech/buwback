@@ -32,7 +32,6 @@ app.use(cors({
     origin: process.env.ALLOWED_WEBSITE,
     credentials: true
 }))
-console.log(process.env.ALLOWED_WEBSITE)
 app.use(express.json())
 
 function my_repo(n:number,m:string | null):myRepo{
@@ -206,7 +205,7 @@ app.get("/api/all_coll" , (rq , rs) =>{
 // POSTSS
 app.post("/api/signup" ,(req,res)=>{
     if(req.body.username && req.body.password){
-        fs.readFile("./JSON/users.json","utf-8",(err: any , data: any)=>{
+        fs.readFile(usersdata,"utf-8",(err: any , data: any)=>{
             if(err){
                 res.status(501).send("users file r error")
             }else{
@@ -233,7 +232,7 @@ app.post("/api/signup" ,(req,res)=>{
 })
 app.post("/api/login",(req,res)=>{
     if(req.body.username && req.body.password){
-        fs.readFile("./JSON/users.json","utf-8",(err:any , data: string)=>{
+        fs.readFile(usersdata,"utf-8",(err:any , data: string)=>{
             if(err){
                 res.status(502).send("users System r error")
             }else{

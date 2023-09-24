@@ -56,7 +56,6 @@ app.use((0, cors_1.default)({
     origin: process.env.ALLOWED_WEBSITE,
     credentials: true
 }));
-console.log(process.env.ALLOWED_WEBSITE);
 app.use(express_1.default.json());
 function my_repo(n, m) {
     return {
@@ -242,7 +241,7 @@ app.get("/api/all_coll", function (rq, rs) {
 // POSTSS
 app.post("/api/signup", function (req, res) {
     if (req.body.username && req.body.password) {
-        fs_1.default.readFile("./JSON/users.json", "utf-8", function (err, data) {
+        fs_1.default.readFile(usersdata, "utf-8", function (err, data) {
             if (err) {
                 res.status(501).send("users file r error");
             }
@@ -272,7 +271,7 @@ app.post("/api/signup", function (req, res) {
 });
 app.post("/api/login", function (req, res) {
     if (req.body.username && req.body.password) {
-        fs_1.default.readFile("./JSON/users.json", "utf-8", function (err, data) {
+        fs_1.default.readFile(usersdata, "utf-8", function (err, data) {
             if (err) {
                 res.status(502).send("users System r error");
             }
