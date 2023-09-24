@@ -1,13 +1,14 @@
+require("dotenv").config({path: "../.env"})
 import  express from "express";
 import  cors  from "cors";
 import user from "./interfaces/user";
 import fs from "fs";
 const port = 5000
 const app = express()
-const usersdata = "./JSON/users.json"
-const watch_parts_data = "./JSON/watch_parts.json"
-const collection_DATA = "./JSON/collections.json"
-const docs = "./htmlDocs/"
+const usersdata = "../JSON/users.json"
+const watch_parts_data = "../JSON/watch_parts.json"
+const collection_DATA = "../JSON/collections.json"
+const docs = "../htmlDocs/"
 const mailer = require("nodemailer");
 type myRepo = {
     condition: number,
@@ -28,10 +29,10 @@ type collection = {
 app.listen(port,()=>{})
 // USES
 app.use(cors({
-    origin: 'http://localhost:4200',
+    origin: process.env.ALLOWED_WEBSITE,
     credentials: true
 }))
-
+console.log(process.env.ALLOWED_WEBSITE)
 app.use(express.json())
 
 function my_repo(n:number,m:string | null):myRepo{
