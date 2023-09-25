@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Api for buil_ur_app",
   "main": "index.js",
   "scripts": {
     "start": "cd built && nodemon server.js",
