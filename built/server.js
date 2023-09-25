@@ -254,7 +254,7 @@ app.post("/api/signup", function (req, res) {
                     email: "void"
                 };
                 re_data.push(user_data);
-                fs_1.default.writeFile("./JSON/users.json", JSON.stringify(re_data), function (err) {
+                fs_1.default.writeFile(usersdata, JSON.stringify(re_data), function (err) {
                     if (err) {
                         res.status(501).send("users file w error");
                     }

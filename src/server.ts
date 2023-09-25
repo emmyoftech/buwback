@@ -217,7 +217,7 @@ app.post("/api/signup" ,(req,res)=>{
                     email: "void"
                 }
                 re_data.push(user_data)
-                fs.writeFile("./JSON/users.json",JSON.stringify(re_data),(err: any)=>{
+                fs.writeFile(usersdata,JSON.stringify(re_data),(err: any)=>{
                     if(err){
                         res.status(501).send("users file w error")
                     }else{
