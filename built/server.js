@@ -156,7 +156,6 @@ app.get("/api/Docs/:nameofdoc", function (req, res) {
     });
 });
 app.get("/api/vmail/:mail", function (req, res) {
-    console.log("hey");
     fs_1.default.readFile(usersdata, "utf-8", function (err, data) {
         if (err) {
             res.status(500).send("users file r error");
@@ -252,7 +251,7 @@ app.get("/api/all_coll", function (rq, rs) {
             if (string_data_auth(dt) && dt != "[]")
                 setTimeout(function () {
                     rs.send(dt);
-                }, 3000);
+                }, 1000);
             else
                 rs.status(303).send("we have no collections at the moment would you like to be the first");
         }
