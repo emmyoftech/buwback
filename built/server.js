@@ -156,7 +156,27 @@ app.get("/api/Docs/:nameofdoc", function (req, res) {
     });
 });
 app.get("/api/vmail/:mail", function (req, res) {
-    mailsending(req.params.mail, function (e) { return res.send(JSON.stringify(my_repo(1, e))); }, function () { return res.send(JSON.stringify(my_repo(0, "failed"))); });
+    console.log("hey");
+    fs_1.default.readFile(usersdata, "utf-8", function (err, data) {
+        if (err) {
+            res.status(500).send("users file r error");
+        }
+        else {
+            var js_data = JSON.parse(data);
+            if (typeof js_data == "object") {
+                var loc_email = js_data.findIndex(function (item) { return item.email == req.params.mail; });
+                if (loc_email >= 0) {
+                    res.send(JSON.stringify(my_repo(2, "in store")));
+                }
+                else {
+                    mailsending(req.params.mail, function (e) { return res.send(JSON.stringify(my_repo(1, e))); }, function () { return res.send(JSON.stringify(my_repo(0, "failed"))); });
+                }
+            }
+            else {
+                res.status(500).send("users file empty");
+            }
+        }
+    });
 });
 app.get("/api/acc_mail/:mail/:user", function (req, res) {
     var sent_data = req.params.mail;

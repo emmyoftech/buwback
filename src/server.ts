@@ -118,7 +118,23 @@ app.get("/api/Docs/:nameofdoc",(req,res)=>{
     })
 })
 app.get("/api/vmail/:mail",(req,res)=>{
-    mailsending(req.params.mail, (e) => res.send(JSON.stringify(my_repo(1,e))) , ()=> res.send(JSON.stringify(my_repo(0,"failed"))))
+    fs.readFile(usersdata,"utf-8",(err:any,data:any)=>{
+        if(err){
+            res.status(500).send("users file r error")
+        }else{
+            let js_data = JSON.parse(data)
+            if(typeof js_data == "object"){
+                let loc_email = js_data.findIndex((item: any) => item.email == req.params.mail)
+                if(loc_email >= 0){
+                    res.send(JSON.stringify(my_repo(2,"in store")))
+                }else{
+                    mailsending(req.params.mail, (e) => res.send(JSON.stringify(my_repo(1,e))) , ()=> res.send(JSON.stringify(my_repo(0,"failed"))))
+                }
+            }else{
+                res.status(500).send("users file empty")
+            }
+        }
+    })
 })
 app.get("/api/acc_mail/:mail/:user", (req,res)=>{
     let sent_data = req.params.mail
@@ -195,7 +211,7 @@ app.get("/api/all_coll" , (rq , rs) =>{
             if(string_data_auth(dt) && dt != "[]")
                 setTimeout(() => {
                     rs.send(dt)
-                }, 3000);
+                }, 1000);
             else
             rs.status(303).send("we have no collections at the moment would you like to be the first")
         }

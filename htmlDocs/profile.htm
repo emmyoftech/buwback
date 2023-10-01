@@ -3,7 +3,7 @@
     <li id="back"> <i class="fa-solid fa-arrow-left"></i></li>
     <li id="dashboard" data-page="dashboard"> <i class="fa-solid fa-house"></i> dashboard</li>
     <li id="edit_profile" data-page="edit"> <i class="fa-solid fa-user"></i> edit profile</li>
-    <li id="verify_me" data-page="verify"> <i class="fa-solid fa-certificate"></i> verify me</li>
+    <li id="verify_me" data-page="verify"> <i class="fa-solid fa-certificate"></i> status</li>
     <li id="logout"> <i class="fa-solid fa-right-from-bracket"></i> logout</li>
 </ul>
 <div class="veri_succ">
@@ -19,7 +19,7 @@
         </span>
         <li id="dashboard" class="active" data-page="dashboard"> <i class="fa-solid fa-house"></i> dashboard</li>
         <li id="edit_profile" data-page="edit"> <i class="fa-solid fa-user"></i> edit profile</li>
-        <li id="verify_me" data-page="verify"> <i class="fa-solid fa-certificate"></i> verify me</li>
+        <li id="verify_me" data-page="verify"> <i class="fa-solid fa-certificate"></i> status</li>
         <li id="logout"> <i class="fa-solid fa-right-from-bracket"></i> logout</li>
     </ol>
     <div class="right">
@@ -79,23 +79,47 @@
                 </form>
             </div>
             <div class="verify hide page" data-page="verify">
-                <p class="ntd_msg">
-                    <span>note:-</span> Enter a valid email address to receive an O.T.P to validate your
-                    profile to enjoy other features in the app.
-                </p>
-                <h1 class="otp_msg hide">enter verification code</h1>
-                <form>
-                    <label>
-                        <input type="email" placeholder="Enter your email...">
-                        <p class="inp_msg"></p>
-                    </label>
-                    <div class="sub_bck">
-                        <button class="norm_btn hide"><i class="fa-solid fa-caret-left"></i> back</button>
-                        <input type="submit" class="disabled" value="submit">
-                    </label>
-                </form>
+                <div class="user_known">
+                    <p class="tit_letter"></p>
+                    <ul>
+                        <li>
+                            <p>username</p>
+                            <span id="us_fielder"></span>
+                        </li>
+                        <li>
+                            <p>email</p>
+                            <span id="us_email">emmanuelbowofoluwa@gmail.com</span>
+                        </li>
+                        <li>
+                            <p>status</p>
+                            <span id="if_veri_or_not">
+                                <b class="nvr">not verified</b>
+                                <b class="vr">verified</b>
+                                <i class="fa-solid fa-xmark"></i>
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+                        </li>
+                    </ul>
+                    <button>verify me</button>
+                </div>
+                <div class="verify_user hide">
+                    <p class="ntd_msg">
+                        <span>note:-</span> Enter a valid email address to receive an O.T.P to validate your
+                        profile to enjoy other features in the app.
+                    </p>
+                    <h1 class="otp_msg hide">enter verification code</h1>
+                    <form>
+                        <label>
+                            <input type="email" placeholder="Enter your email...">
+                            <p class="inp_msg"></p>
+                        </label>
+                        <div class="sub_bck">
+                            <button class="norm_btn hide"><i class="fa-solid fa-caret-left"></i> back</button>
+                            <input type="submit" class="disabled" value="submit">
+                            </label>
+                    </form>
+                </div>
             </div>
         </div>
-        
     </div>
 </div>
