@@ -177,6 +177,25 @@ app.get("/api/vmail/:mail", function (req, res) {
         }
     });
 });
+app.get("/api/g_mail/:user", function (rq, rs) {
+    var user = rq.params.user;
+    fs_1.default.readFile(usersdata, { encoding: "utf-8" }, function (er, dt) {
+        if (er) {
+            rs.send(JSON.stringify(my_repo(0, 'failed')));
+        }
+        else {
+            var data = JSON.parse(dt);
+            var found = data.find(function (i) { return i.username == user; });
+            if (found) {
+                sendit(found.email);
+            }
+            else {
+                rs.send(JSON.stringify(my_repo(2, 'user not found')));
+            }
+        }
+    });
+    var sendit = function (email) { return rs.send(JSON.stringify(my_repo(1, email))); };
+});
 app.get("/api/acc_mail/:mail/:user", function (req, res) {
     var sent_data = req.params.mail;
     var user = req.params.user;

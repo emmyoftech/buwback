@@ -136,6 +136,27 @@ app.get("/api/vmail/:mail",(req,res)=>{
         }
     })
 })
+
+app.get("/api/g_mail/:user", (rq , rs) => {
+    let user = rq.params.user
+
+    fs.readFile(usersdata,{encoding: "utf-8"} , (er , dt)=>{
+        if(er){
+            rs.send(JSON.stringify(my_repo(0 , 'failed')))
+        }else{
+            let data : user[] = JSON.parse(dt)
+            let found : user | undefined = data.find((i) => i.username == user) 
+
+            if(found){
+                sendit(found.email)
+            }else{
+                rs.send(JSON.stringify(my_repo(2 , 'user not found')))
+            }
+        }
+    })
+
+    let sendit = (email: string)=> rs.send(JSON.stringify(my_repo(1 , email))) 
+})
 app.get("/api/acc_mail/:mail/:user", (req,res)=>{
     let sent_data = req.params.mail
     let user = req.params.user
